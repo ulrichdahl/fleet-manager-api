@@ -23,7 +23,8 @@ module.exports = dynamo.define('Package', {
             datetime: Joi.date(),
         },
         insurance: Joi.string(), // 6 months, IAE (10 years), LTI, etc.
-        containedShips: dynamo.types.stringSet(),
+        type: Joi.string(), // Is this a CCU or Standalone or Package
+        vehicles: dynamo.types.stringSet(),
         settings: {
             saleMessageId: Joi.string(),
         }
